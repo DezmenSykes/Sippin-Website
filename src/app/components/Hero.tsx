@@ -3,6 +3,7 @@ import { Bounded } from './Bounded'
 import Link from 'next/link'
 import Image from 'next/image'
 import Button from './Button'
+import { TextSplitter } from './TextSplitter'
 
  
 const Hero = () => {
@@ -12,7 +13,7 @@ const Hero = () => {
     <div className='grid'>
         <div className='grid h-screen place-items-center'> 
             <div className="grid auto-rows-min place-items-center text-center">
-                <h1 className='hero-header lg:text-[13rem] text-7xl font-black uppercase leading-[.8] text-orange-500 md:text-[9rem]'>Sip Freely</h1>
+                <h1 className='hero-header lg:text-[13rem] text-7xl font-black uppercase leading-[.8] text-orange-500 md:text-[9rem]'><TextSplitter text={'Sip Freely'} /></h1>
                 <div className='hero-subheading mt-12 text-5xl font-semibold text-sky-950 lg:text-6xl'>
                     <h1>Crafted Fizz</h1>
                 </div>
@@ -24,7 +25,7 @@ const Hero = () => {
             <div>
                 <Image className='md:hidden w-full' src='/next.svg' alt="" width={300} height={300} />
                 <h2 className='text-side-heading text-balance text-6xl font-black uppercase lg:text-8xl text-sky-950'>
-                    <h2>Try all five flavors</h2>
+                    <TextSplitter text={'Try all five flavors'} />
                 </h2>
                 <div className="text-side-body mt-4 max-w-xl text-balance- text-xl font-normal text-sky-950">
 
