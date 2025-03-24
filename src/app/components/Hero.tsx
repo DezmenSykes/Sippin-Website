@@ -21,8 +21,8 @@ const Hero = () => {
             </div>
         </div>
         <div className='grid text-side relative z-[80] h-screen items-center gap-4 md:grid-cols-2'>
-            <Image src="/assets/imgs/all-cans-bunched.png" alt="" width={300} height={300} />
-            <h1>Hello?</h1>
+            <Image src={'/assets/imgs/all-cans-bunched.png'} alt="" width={300} height={300} />
+            <h1>Try all five flavors.</h1>
             <h1>Hello?</h1>
             <h1>Hello?</h1>
         </div>
@@ -30,6 +30,5 @@ const Hero = () => {
    </Bounded>
   )
 }
-
 
 export default Hero
