@@ -21,10 +21,16 @@ const Hero = () => {
             </div>
         </div>
         <div className='grid text-side relative z-[80] h-screen items-center gap-4 md:grid-cols-2'>
-            <Image src={'/assets/imgs/all-cans-bunched.png'} alt="" width={300} height={300} />
-            <h1>Try all five flavors.</h1>
-            <h1>Hello?</h1>
-            <h1>Hello?</h1>
+            <div>
+                <Image className='md:hidden w-full' src='/next.svg' alt="" width={300} height={300} />
+                <h2 className='text-side-heading text-balance text-6xl font-black uppercase lg:text-8xl text-sky-950'>
+                    <h2>Try all five flavors</h2>
+                </h2>
+                <div className="text-side-body mt-4 max-w-xl text-balance- text-xl font-normal text-sky-950">
+
+                <h1>Dive into a rainbow of bold, bubbly possibilities. From zesty citrus twists to wild berry bursts, each sparkling sip is crafted to fuel your free-spirited side—no sugar crashes, just pure, vibrant flavor. Why pick one? Life’s too spontaneous to settle. Your taste buds deserve the adventure.</h1>
+                </div>
+            </div>
         </div>
     </div>
    </Bounded>
