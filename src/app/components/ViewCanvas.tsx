@@ -2,7 +2,7 @@
 
 import { Canvas } from "@react-three/fiber";
 import { View } from "@react-three/drei";
-
+import { Perf } from "r3f-perf";
 const ViewCanvas = () => {
   return (
     <Canvas
@@ -25,6 +25,7 @@ const ViewCanvas = () => {
       }}
     >
       <View.Port />
+      {/* <Perf /> */}
     </Canvas>
   );
 };
