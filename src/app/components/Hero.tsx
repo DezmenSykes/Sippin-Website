@@ -12,6 +12,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import FloatingCan from "./FloatingCan";
 import Scene from "./Scene";
 import { View } from "@react-three/drei";
+import { Bubbles } from "./Bubbles";
 
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
@@ -87,6 +88,7 @@ const Hero = () => {
     <Bounded className="hero red-border opacity-0">
       <View className="hero-scene pointer-events-none sticky top-0 z-50 -mt-[100vh] hidden h-screen w-screen md:block">
         <Scene />
+        <Bubbles count={300} speed={3} />
       </View>
       <div className="grid">
         <div className="grid h-screen place-items-center">
