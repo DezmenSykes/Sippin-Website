@@ -84,7 +84,7 @@ const Hero = () => {
   });
 
   return (
-    <Bounded className="hero opacity-0">
+    <Bounded className="hero red-border opacity-0">
       <View className="hero-scene pointer-events-none sticky top-0 z-50 -mt-[100vh] hidden h-screen w-screen md:block">
         <Scene />
       </View>

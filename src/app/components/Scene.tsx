@@ -55,7 +55,7 @@ const Scene = () => {
       },
     });
 
-    const introTl
+    introTl
       .from(can1GroupRef.current.position, { y: -5, x: 1 }, 0)
       .from(can1GroupRef.current.rotation, { z: 3 }, 0)
       .from(can2GroupRef.current.position, { y: 5, x: 1 }, 0)
@@ -74,8 +74,28 @@ const Scene = () => {
     });
 
     scrollTl
-    // Rotate can group
-      .to(groupRef.current.rotation, {y: Math.PI * 2})
+      // Rotate can group
+      .to(groupRef.current.rotation, { y: Math.PI * 2 })
+
+      //Can 1 - strawberry
+      .to(can1Ref.current?.position, { x: -0.2, y: -0.7, z: -2 }, 0)
+      .to(can1Ref.current?.rotation, { z: 0.3 }, 0)
+
+      //Can 2 - lemon lime
+      .to(can2Ref.current?.position, {}, 0)
+      .to(can2Ref.current?.rotation, {}, 0)
+
+      //Can 3 - grape
+      .to(can3Ref.current?.position, {}, 0)
+      .to(can3Ref.current?.rotation, {}, 0)
+
+      //Can 4 - watermelon
+      .to(can4Ref.current?.position, {}, 0)
+      .to(can4Ref.current?.rotation, {}, 0)
+
+      //Can 5 - blackcherry
+      .to(can5Ref.current?.position, {}, 0)
+      .to(can5Ref.current?.rotation, {}, 0);
   });
 
   return (
