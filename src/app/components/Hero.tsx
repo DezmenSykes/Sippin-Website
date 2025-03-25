@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 import { Bounded } from './Bounded'
 import Link from 'next/link'
@@ -5,15 +6,30 @@ import Image from 'next/image'
 import Button from './Button'
 import { TextSplitter } from './TextSplitter'
 
- 
+import gsap from 'gsap' 
+import { useGSAP } from '@gsap/react'
+
+gsap.registerPlugin(useGSAP)
+
 const Hero = () => {
     
+    useGSAP(() => {
+        const introTl = gsap.timeline()
+
+        introTl
+        .set('.hero', {opacity: 1})
+        .from('.hero-header-word', {
+            scale: 3,
+            opacity: 0
+        })
+    })
+
   return (
-   <Bounded>
+   <Bounded className='hero opacity-0'>
     <div className='grid'>
         <div className='grid h-screen place-items-center'> 
             <div className="grid auto-rows-min place-items-center text-center">
-                <h1 className='hero-header lg:text-[13rem] text-7xl font-black uppercase leading-[.8] text-orange-500 md:text-[9rem]'><TextSplitter text={'Sip Freely'} /></h1>
+                <h1 className='hero-header lg:text-[13rem] text-7xl font-black uppercase leading-[.8] text-orange-500 md:text-[9rem]'><TextSplitter className='hero-header-word' text={'Sip Freely'} /></h1>
                 <div className='hero-subheading mt-12 text-5xl font-semibold text-sky-950 lg:text-6xl'>
                     <h1>Crafted Fizz</h1>
                 </div>
