@@ -121,7 +121,7 @@ const Hero = () => {
               width={300}
               height={300}
             />
-            <h2 className="text-side-heading text-balance text-6xl font-black uppercase lg:text-8xl text-sky-950">
+            <h2 className="text-side-heading text-balance text-6xl font-black uppercase text-sky-950 lg:text-8xl">
               <TextSplitter text={"Try all five flavors"} />
             </h2>
             <div className="text-side-body mt-4 max-w-xl text-balance- text-xl font-normal text-sky-950">
