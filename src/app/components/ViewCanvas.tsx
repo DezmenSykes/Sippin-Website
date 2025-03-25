@@ -25,7 +25,7 @@ const ViewCanvas = () => {
         fov: 30,
       }}
     >
-      <SodaCan />
+      <SodaCan flavor="strawberryLemonade" />
       <ambientLight intensity={2} />
       <spotLight intensity={3} position={[1, 1, 1]} />
     </Canvas>
