@@ -55,7 +55,7 @@ export function SodaCan({
         receiveShadow
         geometry={(nodes.cylinder_1 as THREE.Mesh).geometry}
       >
-        <meshStandardMaterial roughness={0.35} metalness={0.7} map={label} />
+        <meshStandardMaterial roughness={0.2} metalness={0.7} map={label} />
       </mesh>
       <mesh
         castShadow
