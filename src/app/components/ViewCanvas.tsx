@@ -3,6 +3,7 @@
 import { Canvas } from "@react-three/fiber";
 import { diffProps } from "@react-three/fiber/dist/declarations/src/core/utils";
 import { SodaCan } from "./SodaCan";
+import { Environment } from "@react-three/drei";
 
 const ViewCanvas = () => {
   return (
@@ -26,8 +27,7 @@ const ViewCanvas = () => {
       }}
     >
       <SodaCan flavor="strawberryLemonade" />
-      <ambientLight intensity={2} />
-      <spotLight intensity={3} position={[1, 1, 1]} />
+      <Environment files={"/assets/imgs/hdr/lobby.hdr"} />
     </Canvas>
   );
 };
