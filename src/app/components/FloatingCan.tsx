@@ -2,7 +2,7 @@
 import { Float } from "@react-three/drei";
 import { ReactNode, forwardRef } from "react";
 import { SodaCan, SodaCanProps } from "./SodaCan";
-import { Group } from "three/examples/jsm/libs/tween.module.js";
+import { Group } from "three";
 
 type FloatingCanProps = {
   range?: [number, number];

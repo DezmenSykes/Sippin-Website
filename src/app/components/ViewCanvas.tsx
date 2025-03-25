@@ -1,10 +1,7 @@
 "use client";
 
 import { Canvas } from "@react-three/fiber";
-import { diffProps } from "@react-three/fiber/dist/declarations/src/core/utils";
-import { SodaCan } from "./SodaCan";
-import { Environment, Float, View } from "@react-three/drei";
-import FloatingCan from "./FloatingCan";
+import { View } from "@react-three/drei";
 
 const ViewCanvas = () => {
   return (
