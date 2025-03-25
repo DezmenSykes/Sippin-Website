@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { Bounded } from "./Bounded";
-import SkyDiveScene from "../SkyDiveScene";
+import SkyDiveScene from "./SkyDiveScene";
 import { View } from "@react-three/drei";
 
 const SkyDive = () => {

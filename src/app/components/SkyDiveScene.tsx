@@ -1,8 +1,8 @@
 "use client";
 import React, { useRef } from "react";
 import * as THREE from "three";
-import FloatingCan from "./components/FloatingCan";
-import { Environment } from "@react-three/drei";
+import FloatingCan from "./FloatingCan";
+import { Cloud, Clouds, Environment, OrbitControls } from "@react-three/drei";
 
 const SkyDiveScene = () => {
   const groupRef = useRef<THREE.Group>(null);
@@ -14,7 +14,15 @@ const SkyDiveScene = () => {
 
   return (
     <group ref={groupRef}>
-      <FloatingCan ref={canRef}></FloatingCan>
+      <group rotation={[0, 0, 0.5]}>
+        <FloatingCan ref={canRef}></FloatingCan>
+      </group>
+
+      <Clouds ref={cloudsRef}>
+        <Cloud ref={cloud1Ref} bounds={[10, 10, 2]} />
+        <Cloud ref={cloud2Ref} bounds={[10, 10, 2]} />
+      </Clouds>
+      <OrbitControls />
       <ambientLight intensity={2} color="#9ddefa" />
       <Environment
         files={"/assets/imgs/hdr/field.hdr"}
