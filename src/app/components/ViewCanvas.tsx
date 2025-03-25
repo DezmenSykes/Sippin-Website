@@ -2,6 +2,7 @@
 
 import { Canvas } from "@react-three/fiber";
 import { diffProps } from "@react-three/fiber/dist/declarations/src/core/utils";
+import { SodaCan } from "./SodaCan";
 
 const ViewCanvas = () => {
   return (
@@ -24,10 +25,7 @@ const ViewCanvas = () => {
         fov: 30,
       }}
     >
-      <mesh rotation={[0.5, 0.5, 0]} position={[1, 0, 0]}>
-        <boxGeometry />
-        <meshStandardMaterial color={"hotpink"} />
-      </mesh>
+      <SodaCan />
       <ambientLight intensity={2} />
       <spotLight intensity={3} position={[1, 1, 1]} />
     </Canvas>
