@@ -26,9 +26,6 @@ const ViewCanvas = () => {
         fov: 30,
       }}
     >
-      <Float>
-        <SodaCan flavor="strawberryLemonade" />
-      </Float>
       <Environment
         files={"/assets/imgs/hdr/lobby.hdr"}
         environmentIntensity={1.5}
