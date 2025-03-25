@@ -3,7 +3,8 @@
 import { Canvas } from "@react-three/fiber";
 import { diffProps } from "@react-three/fiber/dist/declarations/src/core/utils";
 import { SodaCan } from "./SodaCan";
-import { Environment, Float } from "@react-three/drei";
+import { Environment, Float, View } from "@react-three/drei";
+import FloatingCan from "./FloatingCan";
 
 const ViewCanvas = () => {
   return (
@@ -26,10 +27,7 @@ const ViewCanvas = () => {
         fov: 30,
       }}
     >
-      <Environment
-        files={"/assets/imgs/hdr/lobby.hdr"}
-        environmentIntensity={1.5}
-      />
+      <View.Port />
     </Canvas>
   );
 };
