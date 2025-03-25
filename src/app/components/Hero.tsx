@@ -20,7 +20,7 @@ const Hero = () => {
       opacity: 0,
       ease: "power4.in",
       delay: 0.3,
-      stagger: 1,
+      stagger: 0.5,
     });
   });
 
@@ -33,7 +33,7 @@ const Hero = () => {
               <TextSplitter
                 wordDisplayStyle="block"
                 className="hero-header-word"
-                text={"Sip Freely"}
+                text={"Stay Bubbly"}
               />
             </h1>
             <div className="hero-subheading mt-12 text-5xl font-semibold text-sky-950 lg:text-6xl">
