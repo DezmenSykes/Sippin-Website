@@ -49,7 +49,7 @@ const DetailsScene = () => {
         {
           z: isOdd ? "0.33" : "-0.33",
           y: isOdd ? Math.PI * 2 * -1 : Math.PI * 2 * 1,
-          ease: "circ.inOut",
+          ease: "back.inOut",
           delay: 0.5,
         },
         "<"
