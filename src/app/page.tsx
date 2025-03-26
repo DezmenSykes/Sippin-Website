@@ -4,6 +4,7 @@ import Footer from "./components/Footer";
 import Hero from "./components/Hero/Hero";
 import SkyDive from "./components/SkyDive/SkyDive";
 import Carousel from "./components/Carousel/Carousel";
+import Details from "./components/Details/Details";
 
 export default function Home() {
   const headingTest: string = "Sippin'";
@@ -12,6 +13,7 @@ export default function Home() {
       <Hero />
       <SkyDive />
       <Carousel />
+      <Details />
     </>
   );
 }
