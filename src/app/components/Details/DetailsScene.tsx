@@ -41,6 +41,7 @@ const DetailsScene = () => {
       tl.to(canRef.current.position, {
         x: isOdd ? "1" : "-1",
         ease: "circ.inOut",
+        delay: 0.5,
       });
 
       tl.to(
@@ -49,6 +50,7 @@ const DetailsScene = () => {
           z: isOdd ? "0.33" : "-0.33",
           y: isOdd ? Math.PI * 2 * -1 : Math.PI * 2 * 1,
           ease: "circ.inOut",
+          delay: 0.5,
         },
         "<"
       );
