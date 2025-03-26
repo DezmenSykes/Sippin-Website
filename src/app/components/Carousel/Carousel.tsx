@@ -69,6 +69,12 @@ const Carousel = () => {
           Right
         </button>
       </div>
+      <div className="text-area relative mx-auto text-center">
+        <div className="text-wrapper text-4xl font-medium">
+          <p>{FLAVORS[currentFlavorIndex].name}</p>
+        </div>
+        <p>12 cans - $25.99</p>
+      </div>
     </section>
   );
 };
