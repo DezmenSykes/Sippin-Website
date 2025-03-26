@@ -114,7 +114,7 @@ const Hero = () => {
               />
             </h1>
             <div className="hero-subheading mt-12 text-5xl font-semibold text-sky-950 lg:text-6xl">
-              <h1>Crafted Fizz</h1>
+              <h1>Flavor Perfected.</h1>
             </div>
             <h1 className="hero-body text-2xl font-normal text-sky-950">
               3-5g sugar. 9g fiber. 5 delicious flavors

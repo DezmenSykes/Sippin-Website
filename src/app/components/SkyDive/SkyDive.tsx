@@ -9,7 +9,7 @@ const SkyDive = () => {
     <Bounded className="skydive h-screen">
       <h2 className="sr-only">lol</h2>
       <View className="h-screen w-screen">
-        <SkyDiveScene flavor="blackCherry" sentence="Gotta Keep Sippin'" />
+        <SkyDiveScene flavor="blackCherry" sentence="Fuel Your Freedom!" />
       </View>
     </Bounded>
   );
