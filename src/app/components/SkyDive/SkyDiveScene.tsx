@@ -1,7 +1,7 @@
 "use client";
 import React, { useRef } from "react";
 import * as THREE from "three";
-import FloatingCan from "./FloatingCan";
+import FloatingCan from "../FloatingCan";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -16,7 +16,7 @@ import {
   OrbitControls,
   Text,
 } from "@react-three/drei";
-import { SodaCanProps } from "./SodaCan";
+import { SodaCanProps } from "../SodaCan";
 import { useMediaQuery } from "@/hooks/useMediaQuery";
 
 type SkyDiveProps = {
@@ -128,15 +128,14 @@ const SkyDiveScene = ({ sentence, flavor }: SkyDiveProps) => {
             },
           ],
           stagger: 0.3,
-        },
-      
+        }
       )
       .to(canRef.current.position, {
         ...getXYPositions(4),
         duration: 0.5,
-        ease: "back.in(1.7)"
+        ease: "back.in(1.7)",
       })
-      .to(cloudsRef.current.position, {z: 7, duration: 0.5});
+      .to(cloudsRef.current.position, { z: 7, duration: 0.5 });
   });
 
   return (
@@ -148,7 +147,7 @@ const SkyDiveScene = ({ sentence, flavor }: SkyDiveProps) => {
           speed={3}
           rotateIntensity={0.2}
         >
-          <pointLight intensity={30} color='#8c0413' decay={0.6} />
+          <pointLight intensity={30} color="#8c0413" decay={0.6} />
         </FloatingCan>
       </group>
 

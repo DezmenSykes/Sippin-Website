@@ -1,18 +1,18 @@
 "use client";
 import React from "react";
-import { Bounded } from "./Bounded";
+import { Bounded } from "../Bounded";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { View } from "@react-three/drei";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import FloatingCan from "./FloatingCan";
+import FloatingCan from "../FloatingCan";
 import Link from "next/link";
 import Image from "next/image";
 
-import Button from "./Button";
-import { TextSplitter } from "./TextSplitter";
+import Button from "../Button";
+import { TextSplitter } from "../TextSplitter";
 import Scene from "./Scene";
-import { Bubbles } from "./Bubbles";
+import { Bubbles } from "../Bubbles";
 
 import { useStore } from "@/hooks/useStore";
 import { useMediaQuery } from "@/hooks/useMediaQuery";

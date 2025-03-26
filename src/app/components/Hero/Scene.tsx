@@ -1,7 +1,7 @@
 "use client";
 import React, { useRef } from "react";
 import { Canvas, useThree } from "@react-three/fiber";
-import FloatingCan from "./FloatingCan";
+import FloatingCan from "../FloatingCan";
 import { Environment, OrbitControls } from "@react-three/drei";
 import { Group } from "three";
 import gsap from "gsap";

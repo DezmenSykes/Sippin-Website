@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { Bounded } from "./Bounded";
+import { Bounded } from "../Bounded";
 import SkyDiveScene from "./SkyDiveScene";
 import { View } from "@react-three/drei";
 
