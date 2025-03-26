@@ -84,6 +84,15 @@ const SkyDiveScene = ({ sentence, flavor }: SkyDiveProps) => {
       repeat: -1,
       duration: DURATION,
     });
+
+    gsap.to(cloud2Ref.current.position, {
+      x: `+=${getXPosition(DISTANCE * -2)}`,
+      y: `+=${getYPosition(DISTANCE * 2)}`,
+      ease: "none",
+      repeat: -1,
+      delay: DURATION / 2,
+      duration: DURATION,
+    });
   });
 
   return (
