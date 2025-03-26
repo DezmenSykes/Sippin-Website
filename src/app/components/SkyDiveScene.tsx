@@ -116,7 +116,21 @@ const SkyDiveScene = ({ sentence, flavor }: SkyDiveProps) => {
         y: 0,
         duration: 0.3,
         ease: "back.out(1.7)",
-      });
+      })
+      .to(
+        wordsRef.current.children.map((word) => word.position),
+        {
+          keyframes: [
+            { x: 0, y: 0, z: -1 },
+            {
+              ...getXYPositions(-7),
+              z: -7,
+            },
+          ],
+          stagger: 0.3,
+        },
+        0
+      );
   });
 
   return (
