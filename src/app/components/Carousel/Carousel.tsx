@@ -39,12 +39,11 @@ const Carousel = () => {
       </h2>
       <div className="grid grid-cols-[auto,auto,auto] items-center">
         {/* Left */}
-        <button
+        <ArrowBtn
           onClick={() => changeFlavor(currentFlavorIndex - 1)}
-          className="z-20"
-        >
-          Left
-        </button>
+          direction="left"
+          label="Previous Flavor"
+        />
         {/* Can */}
         <View className="aspect-square h-[70vmin] min-h-40">
           <Center position={[0, 0, 1.5]}>
@@ -62,12 +61,11 @@ const Carousel = () => {
           <directionalLight intensity={6} position={[0, 1, 1]} />
         </View>
         {/* Right */}
-        <button
+        <ArrowBtn
           onClick={() => changeFlavor(currentFlavorIndex + 1)}
-          className="z-20"
-        >
-          Right
-        </button>
+          direction="right"
+          label="Next Flavor"
+        />
       </div>
       <div className="text-area relative mx-auto text-center">
         <div className="text-wrapper text-4xl font-medium">
@@ -82,3 +80,17 @@ const Carousel = () => {
 };
 
 export default Carousel;
+
+type ArrowBtnProps = {
+  direction?: "right" | "left";
+  label: string;
+  onClick: () => void;
+};
+
+const ArrowBtn = ({ label, onClick, direction = "right" }: ArrowBtnProps) => {
+  return (
+    <button onClick={() => onClick} className="z-20">
+      {label}
+    </button>
+  );
+};
