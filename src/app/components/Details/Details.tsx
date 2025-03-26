@@ -11,11 +11,10 @@ const Details = () => {
   return (
     <Bounded className="details-container bg-yellow-300 relative text-sky-950">
       <div className="grid relative">
-        {isDesktop && (
-          <View className="details-view absolute left-0 top-0 h-screen w-full red-border">
-            <DetailsScene />
-          </View>
-        )}
+        <View className="details-view absolute left-0 top-0 h-screen w-full ">
+          <DetailsScene />
+        </View>
+
         <div className="details-section grid h-screen place-items-center gap-x-12 md:grid-cols-2">
           <div className="col-start-1 md:col-start-2">
             <h2 className="text-balance text-6xl font-bold">

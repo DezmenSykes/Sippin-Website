@@ -8,11 +8,14 @@ import { Environment } from "@react-three/drei";
 import FloatingCan from "../FloatingCan";
 import { useRef } from "react";
 import { Group } from "three";
+import { useMediaQuery } from "@/hooks/useMediaQuery";
 
 gsap.registerPlugin(useGSAP);
 
 const DetailsScene = () => {
   const canRef = useRef<Group>(null);
+  const isDesktop = useMediaQuery("(min-width: 768px)", true);
+
   const bgColors = ["#ffa6b5", "#e9cff6", "#cbef9a"];
 
   useGSAP(() => {
@@ -39,35 +42,38 @@ const DetailsScene = () => {
       const isOdd = index % 2 !== 0;
 
       tl.to(canRef.current.position, {
-        x: isOdd ? "1" : "-1",
+        x: isOdd ? "0.58" : "-0.58",
         ease: "circ.inOut",
         delay: 0.5,
-      });
+      })
 
-      tl.to(
-        canRef.current.rotation,
-        {
-          z: isOdd ? "0.33" : "-0.33",
-          y: isOdd ? Math.PI * 2 * -1 : Math.PI * 2 * 1,
-          ease: "back.inOut",
-          delay: 0.5,
-        },
-        "<"
-      );
-      tl.to(".details-container", {
-        backgroundColor: gsap.utils.wrap(bgColors, index),
-      });
+        .to(
+          canRef.current.rotation,
+          {
+            z: isOdd ? "0.33" : "-0.33",
+            y: isOdd ? Math.PI * 2 * -1 : Math.PI * 2 * 1,
+            ease: "back.inOut",
+          },
+          "<"
+        )
+        .to(".details-container", {
+          backgroundColor: gsap.utils.wrap(bgColors, index),
+        });
     });
   });
 
   return (
-    <group ref={canRef} position-x={-1}>
-      <FloatingCan flavor="strawberryLemonade" />
-      <Environment
-        files={"/assets/imgs/hdr/lobby.hdr"}
-        environmentIntensity={1.5}
-      />
-    </group>
+    <>
+      {isDesktop && (
+        <group ref={canRef} position-x={-0.58}>
+          <FloatingCan flavor="strawberryLemonade" />
+          <Environment
+            files={"/assets/imgs/hdr/lobby.hdr"}
+            environmentIntensity={1.5}
+          />
+        </group>
+      )}
+    </>
   );
 };
 
