@@ -17,6 +17,20 @@ const DetailsScene = () => {
 
   useGSAP(() => {
     if (!canRef.current) return;
+
+    const sections = gsap.utils.toArray(".details-section");
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".details-view",
+        markers: true,
+        endTrigger: ".details-container",
+        pin: true,
+        start: "top top",
+        end: "bottom bottom",
+        scrub: true,
+      },
+    });
   });
 
   return (

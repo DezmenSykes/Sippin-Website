@@ -8,7 +8,7 @@ const Details = () => {
   return (
     <Bounded className="details-container relative text-sky-950">
       <div className="grid relative">
-        <View className="details-text-view absolute left-0 top-0 h-screen w-full">
+        <View className="details-view absolute left-0 top-0 h-screen w-full">
           <DetailsScene />
         </View>
         <div className="details-section grid h-screen place-items-center gap-x-12 md:grid-cols-2">
