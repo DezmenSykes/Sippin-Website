@@ -73,7 +73,9 @@ const Carousel = () => {
         <div className="text-wrapper text-4xl font-medium">
           <p>{FLAVORS[currentFlavorIndex].name}</p>
         </div>
-        <p>12 cans - $25.99</p>
+        <div className="mt-2 text-2xl font-normal opacity-90">
+          <p>12 cans - $25.99</p>
+        </div>
       </div>
     </section>
   );
