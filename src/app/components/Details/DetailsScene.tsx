@@ -18,54 +18,68 @@ const DetailsScene = () => {
 
   const bgColors = ["#ffa6b5", "#e9cff6", "#cbef9a"];
 
-  useGSAP(() => {
-    if (!canRef.current) return;
-
-    const sections = gsap.utils.toArray(".details-section");
-
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".details-view",
-        markers: true,
-        endTrigger: ".details-container",
-        pin: true,
-        start: "top top",
-        end: "bottom bottom",
-        scrub: true,
-      },
-    });
-
-    sections.forEach((_, index) => {
+  useGSAP(
+    () => {
       if (!canRef.current) return;
-      if (index === 0) return;
 
-      const isOdd = index % 2 !== 0;
+      const sections = gsap.utils.toArray(".details-section");
 
-      tl.to(canRef.current.position, {
-        x: isOdd ? "0.58" : "-0.58",
-        ease: "circ.inOut",
-        delay: 0.5,
-      })
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".details-view",
+          markers: true,
+          endTrigger: ".details-container",
+          pin: true,
+          start: "top top",
+          end: "bottom bottom",
+          scrub: true,
+        },
+      });
 
-        .to(
-          canRef.current.rotation,
-          {
-            z: isOdd ? "0.33" : "-0.33",
-            y: isOdd ? Math.PI * 2 * -1 : Math.PI * 2 * 1,
-            ease: "back.inOut",
-          },
-          "<"
-        )
-        .to(".details-container", {
-          backgroundColor: gsap.utils.wrap(bgColors, index),
-        });
-    });
-  });
+      sections.forEach((_, index) => {
+        if (!canRef.current) return;
+        if (index === 0) return;
+
+        const isOdd = index % 2 !== 0;
+
+        const xPosition = isDesktop ? (isOdd ? "0.58" : "-0.58") : 0;
+        const yPosition = isDesktop
+          ? isOdd
+            ? Math.PI * 2 * -1
+            : Math.PI * 2 * 1
+          : 0;
+
+        tl.to(canRef.current.position, {
+          x: xPosition,
+          ease: "circ.inOut",
+          delay: 0.5,
+        })
+
+          .to(
+            canRef.current.rotation,
+            {
+              z: isOdd ? "0.33" : "-0.33",
+              y: yRotation,
+              ease: "back.inOut",
+            },
+            "<"
+          )
+          .to(".details-container", {
+            backgroundColor: gsap.utils.wrap(bgColors, index),
+          });
+      });
+    },
+    { dependencies: [isDesktop] }
+  );
 
   return (
     <>
-      {isDesktop && (
-        <group ref={canRef} position-x={-0.58}>
+      {true && (
+        <group
+          ref={canRef}
+          position-x={isDesktop ? "-0.58" : 0}
+          rotation={-0.33}
+        >
           <FloatingCan flavor="strawberryLemonade" />
           <Environment
             files={"/assets/imgs/hdr/lobby.hdr"}

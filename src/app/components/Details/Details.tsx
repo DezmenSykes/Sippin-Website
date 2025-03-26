@@ -10,13 +10,13 @@ const Details = () => {
 
   return (
     <Bounded className="details-container bg-yellow-300 relative text-sky-950">
-      <div className="grid relative">
+      <div className="grid z-[100] relative">
         <View className="details-view absolute left-0 top-0 h-screen w-full ">
           <DetailsScene />
         </View>
 
         <div className="details-section grid h-screen place-items-center gap-x-12 md:grid-cols-2">
-          <div className="col-start-1 md:col-start-2">
+          <div className="col-start-1 backdrop-blur-lg md:col-start-2 max-md:bg-white/30 rounded-lg p-4">
             <h2 className="text-balance text-6xl font-bold">
               Body-Friendly Freshness
             </h2>
@@ -29,7 +29,7 @@ const Details = () => {
           </div>
         </div>
         <div className="details-section grid h-screen place-items-center gap-x-12 md:grid-cols-2">
-          <div className="col-start-1 md:col-start-1">
+          <div className="col-start-1 backdrop-blur-lg md:col-start-1 max-md:bg-white/30 rounded-lg p-4">
             <h2 className="text-balance text-6xl font-bold">
               Light Calories, Big Flavor
             </h2>
@@ -41,7 +41,7 @@ const Details = () => {
           </div>
         </div>
         <div className="details-section grid h-screen place-items-center gap-x-12 md:grid-cols-2">
-          <div className="col-start-1 md:col-start-2">
+          <div className="col-start-1 backdrop-blur-lg md:col-start-2 max-md:bg-white/30 rounded-lg p-4">
             <h2 className="text-balance text-6xl font-bold">
               Naturally Refreshing
             </h2>
