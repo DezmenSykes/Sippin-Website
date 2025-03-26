@@ -68,14 +68,22 @@ const SkyDiveScene = ({ sentence, flavor }: SkyDiveProps) => {
       repeat: -1,
       ease: "none",
     });
-  });
 
-  // Infinite Cloud Movement
-  const DISTANCE = 15;
-  const DURATION = 6;
+    // Infinite Cloud Movement
+    const DISTANCE = 15;
+    const DURATION = 6;
 
-  gsap.set([cloud2Ref.current?.position, cloud1Ref.current?.position], {
-    ...getXYPositions(DISTANCE),
+    gsap.set([cloud2Ref.current?.position, cloud1Ref.current?.position], {
+      ...getXYPositions(DISTANCE),
+    });
+
+    gsap.to(cloud1Ref.current.position, {
+      x: `+=${getXPosition(DISTANCE * -2)}`,
+      y: `+=${getYPosition(DISTANCE * 2)}`,
+      ease: "none",
+      repeat: -1,
+      duration: DURATION,
+    });
   });
 
   return (
