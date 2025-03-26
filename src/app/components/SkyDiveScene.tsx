@@ -129,8 +129,14 @@ const SkyDiveScene = ({ sentence, flavor }: SkyDiveProps) => {
           ],
           stagger: 0.3,
         },
-        0
-      );
+      
+      )
+      .to(canRef.current.position, {
+        ...getXYPositions(4),
+        duration: 0.5,
+        ease: "back.in(1.7)"
+      })
+      .to(cloudsRef.current.position, {z: 7, duration: 0.5});
   });
 
   return (
