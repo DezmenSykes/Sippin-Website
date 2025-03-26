@@ -31,10 +31,35 @@ const DetailsScene = () => {
         scrub: true,
       },
     });
+
+    sections.forEach((_, index) => {
+      if (!canRef.current) return;
+      if (index === 0) return;
+
+      const isOdd = index % 2 !== 0;
+
+      tl.to(canRef.current.position, {
+        x: isOdd ? "1" : "-1",
+        ease: "circ.inOut",
+      });
+
+      tl.to(
+        canRef.current.rotation,
+        {
+          z: isOdd ? "0.33" : "-0.33",
+          y: isOdd ? Math.PI * 2 * -1 : Math.PI * 2 * 1,
+          ease: "circ.inOut",
+        },
+        "<"
+      );
+      tl.to(".details-container", {
+        backgroundColor: gsap.utils.wrap(bgColors, index),
+      });
+    });
   });
 
   return (
-    <group ref={canRef}>
+    <group ref={canRef} position-x={-1}>
       <FloatingCan flavor="strawberryLemonade" />
       <Environment
         files={"/assets/imgs/hdr/lobby.hdr"}

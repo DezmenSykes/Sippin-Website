@@ -3,14 +3,19 @@ import React from "react";
 import { Bounded } from "../Bounded";
 import { View } from "@react-three/drei";
 import DetailsScene from "./DetailsScene";
+import { useMediaQuery } from "@/hooks/useMediaQuery";
 
 const Details = () => {
+  const isDesktop = useMediaQuery("(min-width: 768px)", true);
+
   return (
-    <Bounded className="details-container relative text-sky-950">
+    <Bounded className="details-container bg-yellow-300 relative text-sky-950">
       <div className="grid relative">
-        <View className="details-view absolute left-0 top-0 h-screen w-full">
-          <DetailsScene />
-        </View>
+        {isDesktop && (
+          <View className="details-view absolute left-0 top-0 h-screen w-full red-border">
+            <DetailsScene />
+          </View>
+        )}
         <div className="details-section grid h-screen place-items-center gap-x-12 md:grid-cols-2">
           <div className="col-start-1 md:col-start-2">
             <h2 className="text-balance text-6xl font-bold">
