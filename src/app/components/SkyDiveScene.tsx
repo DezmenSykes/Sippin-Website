@@ -93,6 +93,30 @@ const SkyDiveScene = ({ sentence, flavor }: SkyDiveProps) => {
       delay: DURATION / 2,
       duration: DURATION,
     });
+
+    const scrollTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".skydive",
+        pin: true,
+        start: "top top",
+        end: "+=2000",
+        scrub: 1.5,
+      },
+    });
+
+    scrollTl
+      .to("body", {
+        backgroundColor: "#c0f0f5",
+        overwrite: "auto",
+        duration: 0.1,
+      })
+      .to(cloudsRef.current.position, { z: 0, duration: 0.3 }, 0)
+      .to(canRef.current.position, {
+        x: 0,
+        y: 0,
+        duration: 0.3,
+        ease: "back.out(1.7)",
+      });
   });
 
   return (
@@ -114,8 +138,6 @@ const SkyDiveScene = ({ sentence, flavor }: SkyDiveProps) => {
       <group ref={wordsRef}>
         {sentence && <ThreeText sentence={sentence} color="#f97315" />}
       </group>
-
-      <OrbitControls />
 
       <ambientLight intensity={2} color="#9ddefa" />
       <Environment
