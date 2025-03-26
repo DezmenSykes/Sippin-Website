@@ -43,7 +43,7 @@ const DetailsScene = () => {
         const isOdd = index % 2 !== 0;
 
         const xPosition = isDesktop ? (isOdd ? "0.58" : "-0.58") : 0;
-        const yPosition = isDesktop
+        const yRotation = isDesktop
           ? isOdd
             ? Math.PI * 2 * -1
             : Math.PI * 2 * 1
