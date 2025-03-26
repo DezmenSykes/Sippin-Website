@@ -1,8 +1,10 @@
 "use client";
 
-import { View } from "@react-three/drei";
+import { Center, Environment, View } from "@react-three/drei";
 import { Bounded } from "../Bounded";
 import { SodaCanProps } from "../SodaCan";
+import FloatingCan from "../FloatingCan";
+import { DirectionalLight } from "three";
 
 const FLAVORS: {
   flavor: SodaCanProps["flavor"];
@@ -30,6 +32,17 @@ const Carousel = () => {
       <div className="grid grid-cols-[auto,auto,auto] items-center">
         {/* Left */}
         {/* Can */}
+        <View className="aspect-square h-[70vmin] min-h-40">
+          <Center position={[0, 0, 1.5]}>
+            <FloatingCan floatIntensity={0.3} rotateIntensity={1} />
+          </Center>
+          <Environment
+            files={"/assets/imgs/hdr/lobby.hdr"}
+            environmentIntensity={0.6}
+            environmentRotation={[0, 3, 0]}
+          />
+          <directionalLight intensity={6} position={[0, 1, 1]} />
+        </View>
         {/* Right */}
       </div>
     </section>
