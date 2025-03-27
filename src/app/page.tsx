@@ -16,7 +16,6 @@ export default function Home() {
       <Carousel />
       <Details />
       <BigText />
-      <Footer />
     </>
   );
 }
