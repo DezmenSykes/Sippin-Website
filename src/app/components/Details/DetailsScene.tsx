@@ -27,7 +27,6 @@ const DetailsScene = () => {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: ".details-view",
-          markers: true,
           endTrigger: ".details-container",
           pin: true,
           start: "top top",

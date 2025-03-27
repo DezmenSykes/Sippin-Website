@@ -14,6 +14,7 @@ export default function Home() {
       <SkyDive />
       <Carousel />
       <Details />
+      <Footer />
     </>
   );
 }
