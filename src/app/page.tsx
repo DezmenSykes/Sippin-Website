@@ -5,6 +5,7 @@ import Hero from "./components/Hero/Hero";
 import SkyDive from "./components/SkyDive/SkyDive";
 import Carousel from "./components/Carousel/Carousel";
 import Details from "./components/Details/Details";
+import BigText from "./components/BigText.tsx/BigText";
 
 export default function Home() {
   const headingTest: string = "Sippin'";
@@ -14,6 +15,7 @@ export default function Home() {
       <SkyDive />
       <Carousel />
       <Details />
+      <BigText />
       <Footer />
     </>
   );
