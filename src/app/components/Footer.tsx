@@ -11,18 +11,19 @@ const Footer = () => {
 
   const logoRef = useRef(null)
   useGSAP(()=>{
-   const tl =  gsap.timeline();
+   const tl =  gsap.timeline({
+    repeat: -1
+   });
    
    tl.to('.logo', {
-    x: "+=5",         // Move right
-    duration: 0.5,
-    repeat: 200,        // Shake 5 times
-                yoyo: true,       // Go back and forth
-                ease: "sine.inOut",
-                }, 0)
-                .to('.logo', {
-                  x: 0,
-      delay:0.45
+    y: "+=10", 
+    transformOrigin: 'center',       // Move right
+    duration: 1,       // Shake 5 times       // Go back and forth
+    ease: "bounce.out",
+    }, 0)
+    .to('.logo', {
+      y: 0,
+      delay:0.7
     })
   })
 
