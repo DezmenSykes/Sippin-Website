@@ -73,6 +73,7 @@ const Carousel = () => {
       .to(
         {},
         {
+          
           onStart: () => {
             setCurrentFlavorIndex(nextIndex);
           },
