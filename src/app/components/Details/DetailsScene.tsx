@@ -58,7 +58,7 @@ const DetailsScene = () => {
             canRef.current.rotation,
             {
               z: isOdd ? "0.33" : "-0.33",
-              y: yRotation,
+              //y: yRotation,
               ease: "back.inOut",
             },
             "<"

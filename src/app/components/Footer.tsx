@@ -16,7 +16,7 @@ const Footer = () => {
    });
    
    tl.to('.logo', {
-    y: "+=10", 
+    y: "+=40", 
     transformOrigin: 'center',       // Move right
     duration: 1,       // Shake 5 times       // Go back and forth
     ease: "bounce.out",
